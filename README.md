@@ -1,0 +1,2 @@
+# ProjectOszi
+FPGA Oszilloskop GUI
