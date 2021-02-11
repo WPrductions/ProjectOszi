@@ -1,7 +1,6 @@
 #include <Oszi.h>
-#include <stdio.h>
 
-class Startup
+class Startup : public Oszi::Application
 {
 public:
 	Startup() {
@@ -14,8 +13,7 @@ public:
 
 int main() {
 	Startup* program = new Startup();
-	/*program->Run();*/
+	program->Run();
 	delete program;
-	printf("R");
 	return 0;
 }
