@@ -14,7 +14,7 @@ namespace Oszi {
 
 		inline static std::shared_ptr<spdlog::logger>& GetLogger() { return s_Logger; }
 
-	private:	
+	private:
 		static std::shared_ptr<spdlog::logger> s_Logger;
 	};
 }
