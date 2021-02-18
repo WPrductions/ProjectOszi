@@ -59,7 +59,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>OZ_PLATFORM_WINDOWS_DEBUG;_CONSOLE;%(PreprocessorDefinitions)OZ_PLATFORM_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)ProjectOszi\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProjectOszi\src;$(SolutionDir)ProjectOszi\vendor\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -74,7 +74,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>OZ_PLATFORM_WINDOWSNDEBUG;_CONSOLE;%(PreprocessorDefinitions)OZ_PLATFORM_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)ProjectOszi\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProjectOszi\src;$(SolutionDir)ProjectOszi\vendor\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

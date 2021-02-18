@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Oszi\Log.h" />
     <ClInclude Include="src\Oszi\Application.h" />
     <ClInclude Include="src\Oszi.h" />
     <ClInclude Include="src\Oszi\Core.h" />
     <ClInclude Include="src\Oszi\Program.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Oszi\Log.cpp" />
     <ClCompile Include="src\Oszi\Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -68,6 +70,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>OZ_PLATFORM_WINDOWS;OZ_BUILD_DLL;OZ_BUILD_DLL_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProjectOszi\vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,6 +85,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>OZ_PLATFORM_WINDOWS;OZ_BUILD_DLL;OZ_BUILD_DLLNDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProjectOszi\vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
