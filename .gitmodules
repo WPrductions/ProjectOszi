@@ -1,3 +1,4 @@
 [submodule "ProjectOszi/vendor/spdlog"]
 	path = ProjectOszi/vendor/spdlog
-	url = https://github.com/gabime/spdlog.git
+	url = ../../gabime/spdlog.git
+	branch = v1.x
