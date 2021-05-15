@@ -18,6 +18,9 @@ project "ProjectOszi"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "ozpch.h"
+	pchsource "ProjectOszi/src/ozpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -26,7 +29,8 @@ project "ProjectOszi"
 
 	includedirs
 	{
-		"ProjectOszi/vendor/spdlog/include"
+		"ProjectOszi/vendor/spdlog/include",
+		"ProjectOszi/src"
 	}
 
 	filter "system:windows"

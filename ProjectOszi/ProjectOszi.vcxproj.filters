@@ -19,6 +19,7 @@
     <ClInclude Include="src\Oszi\Program.h">
       <Filter>Oszi</Filter>
     </ClInclude>
+    <ClInclude Include="src\ozpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Oszi\Application.cpp">
@@ -27,5 +28,6 @@
     <ClCompile Include="src\Oszi\Log.cpp">
       <Filter>Oszi</Filter>
     </ClCompile>
+    <ClCompile Include="src\ozpch.cpp" />
   </ItemGroup>
 </Project>

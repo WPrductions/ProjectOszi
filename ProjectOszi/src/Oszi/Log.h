@@ -1,6 +1,5 @@
 #pragma once
 
-#include <memory>
 
 #include "Core.h"
 #include "spdlog/spdlog.h"
@@ -20,7 +19,6 @@ namespace Oszi {
 }
 
 //Console Log Macros
-#define OZ_FATAL(...) ::Oszi::Log::GetLogger()->fatal(__VA_ARGS__)
 #define OZ_ERROR(...) ::Oszi::Log::GetLogger()->error(__VA_ARGS__)
 #define OZ_WARN(...) ::Oszi::Log::GetLogger()->warn(__VA_ARGS__)
 #define OZ_INFO(...) ::Oszi::Log::GetLogger()->info(__VA_ARGS__)
