@@ -10,6 +10,11 @@ workspace "ProjectOszi"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "ProjectOszi/vendor/GLFW/include"
+
+include "ProjectOszi/vendor/GLFW"
+
 project "ProjectOszi"
 	location "ProjectOszi"
 	kind "SharedLib"
@@ -29,13 +34,20 @@ project "ProjectOszi"
 
 	includedirs
 	{
-		"ProjectOszi/vendor/spdlog/include",
-		"ProjectOszi/src"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{prj.name}/src",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "off"
 		systemversion "latest"
 
 		defines
@@ -55,7 +67,7 @@ project "ProjectOszi"
 
 	filter "configurations:Release"
 		defines "OZ_RELEASE"
-		optimize "On"
+		optimize "Full"
 
 	filter "configurations:Dist"
 		defines "OZ_DIST"
@@ -103,7 +115,7 @@ project "Application"
 
 	filter "configurations:Release"
 		defines "OZ_RELEASE"
-		optimize "On"
+		optimize "Full"
 
 	filter "configurations:Dist"
 		defines "OZ_DIST"

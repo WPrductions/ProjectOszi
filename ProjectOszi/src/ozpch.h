@@ -14,6 +14,8 @@
 #include <unordered_set>
 #include <chrono>
 
+#include "Oszi/Log.h"
+
 #if OZ_PLATFORM_WINDOWS
 #include <Windows.h>
 #endif
