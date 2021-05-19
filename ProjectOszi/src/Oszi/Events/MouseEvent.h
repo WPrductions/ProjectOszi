@@ -1,9 +1,11 @@
 #pragma once
 
 #include "Oszi/Events/Event.h"
+#include <sstream>
+
 
 namespace Oszi {
-	class MouseMovedEvent : public Event
+	class OSZI_API MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(const float x, const float y) : m_MouseX{ x }, m_MouseY{ y } {}
@@ -24,10 +26,10 @@ namespace Oszi {
 		float m_MouseX, m_MouseY;
 	};
 
-	class MouseScroledEvent : public Event
+	class OSZI_API MouseScrolledEvent : public Event
 	{
 	public:
-		MouseScroledEvent(const float xOffset, const float yOffset) : m_XOffset{ xOffset }, m_YOffset{ yOffset } {}
+		MouseScrolledEvent(const float xOffset, const float yOffset) : m_XOffset{ xOffset }, m_YOffset{ yOffset } {}
 
 		float GetX() const { return m_XOffset; }
 		float GetY() const { return m_YOffset; }
@@ -39,13 +41,13 @@ namespace Oszi {
 			return ss.str();
 		}
 
-		EVENT_CLASS_TYPE(MouseScroled)
+		EVENT_CLASS_TYPE(MouseScrolled)
 		EVENT_CLASS_CATEGORY(MouseEvent | InputEvent)
 	private:
 		float m_XOffset, m_YOffset;
 	};
 
-	class MouseButtonEvent : public Event
+	class OSZI_API MouseButtonEvent : public Event
 	{
 	public:
 		inline int GetMouseButton() const { return m_Button; }
@@ -57,10 +59,10 @@ namespace Oszi {
 		int m_Button;
 	};
 
-	class MouseButtonPressedEvent : public MouseButtonEvent
+	class OSZI_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonPressedEvent(const int button): MouseButtonEvent(button) {}
+		MouseButtonPressedEvent(int button): MouseButtonEvent(button) {}
 
 		std::string ToString() const override
 		{
@@ -72,10 +74,10 @@ namespace Oszi {
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class MouseButtonReleasedEvent : public MouseButtonEvent
+	class OSZI_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonReleasedEvent(const int button)
+		MouseButtonReleasedEvent(int button)
 			: MouseButtonEvent(button) {}
 
 		std::string ToString() const override

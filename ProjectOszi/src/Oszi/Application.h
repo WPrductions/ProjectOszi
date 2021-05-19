@@ -1,6 +1,7 @@
 #pragma once
 #include "Core.h"
 #include "Window.h"
+#include"Events/Events.h"
 
 namespace Oszi {
 	class OSZI_API Application
@@ -11,7 +12,11 @@ namespace Oszi {
 
 		void Run();
 
+		void OnEvent(Event& e);
+
 	private:
+		bool OnWindowClose(WindowCloseEvent& event);
+
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 	};

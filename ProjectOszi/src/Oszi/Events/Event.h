@@ -13,7 +13,7 @@ namespace Oszi
 		//Key Events
 		KeyPressed, KeyReleased,
 		//Mouse Events
-		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScroled
+		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
 	enum EventCategory
@@ -23,16 +23,16 @@ namespace Oszi
 		InputEvent			= BIT(1),
 		KeyboardEvent		= BIT(2),
 		MouseEvent			= BIT(3),
-		MouseButtonEvent	= BIT(4)
+		Mouse_ButtonEvent	= BIT(4)
 	};
 
-#define EVENT_CLASS_TYPE(type)  static EventType GetStaticEventType() { return EventType::type; }\
+#define EVENT_CLASS_TYPE(type)  static EventType GetStaticEventType() { return EventType::##type; }\
 								virtual EventType GetEventType() const override { return GetStaticEventType(); }\
 								virtual const char* GetName() const override { return #type; }
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class Event
+	class OSZI_API Event
 	{
 	public:
 		virtual ~Event() = default;
@@ -50,17 +50,17 @@ namespace Oszi
 		}
 	};
 
-	class EventDispatcher
+	class OSZI_API EventDispatcher
 	{
 		template<typename T>
-		using EventFn = std::function<bool(&T)>;
+		using EventFn = std::function<bool(T&)>;
 	public:
 		EventDispatcher(Event& event) : m_Event{ event } {}
 		
 		template<typename T>
 		bool Dispatch(EventFn<T> func)
 		{
-			if (m_Event.GetEventType() == T::GetStaticType())
+			if (m_Event.GetEventType() == T::GetStaticEventType())
 			{
 				m_Event.Handled = func(*(T*)&m_Event);
 				return true;

@@ -3,7 +3,7 @@
 #include "Oszi/Events/Event.h"
 
 namespace Oszi {
-	class KeyEvent : public Event
+	class OSZI_API KeyEvent : public Event
 	{
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
@@ -16,7 +16,7 @@ namespace Oszi {
 		int m_KeyCode;
 	};
 
-	class KeyPressedEvent : public KeyEvent
+	class OSZI_API KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(const int keyCode, const int repeatCount) :KeyEvent(keyCode), m_RepeatCount(repeatCount) {}
@@ -35,7 +35,7 @@ namespace Oszi {
 		int m_RepeatCount;
 	};
 	
-	class KeyReleasedEvent : public KeyEvent
+	class OSZI_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(const int keyCode) :KeyEvent(keyCode){}

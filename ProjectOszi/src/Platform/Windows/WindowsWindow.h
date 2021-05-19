@@ -15,6 +15,7 @@ namespace Oszi {
 		unsigned int GetWidth() const override { return m_Data.Width; }
 		unsigned int GetHight() const override { return m_Data.Hight; }
 
+		inline void SetEventCallback(const EventCallbackFn& callback) override { m_Data.EventCallback = callback; }
 		void SetVSync(bool enabled) override;
 		bool IsVSync() const override { return m_Data.VSync; }
 
@@ -30,6 +31,7 @@ namespace Oszi {
 			std::string Title;
 			unsigned int Width, Hight;
 			bool VSync;
+			EventCallbackFn EventCallback;
 		};
 
 		WindowData m_Data;

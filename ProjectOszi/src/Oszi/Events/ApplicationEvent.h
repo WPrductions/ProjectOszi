@@ -4,7 +4,7 @@
 
 namespace Oszi
 {
-	class WindowRezizeEvent : public Event
+	class OSZI_API WindowRezizeEvent : public Event
 	{
 	public:
 		WindowRezizeEvent(unsigned int width, unsigned int height) : m_Width{ width }, m_Height{ height } {}
@@ -25,7 +25,7 @@ namespace Oszi
 		unsigned int m_Width, m_Height;
 	};
 
-	class WindowCloseEvent : public Event
+	class OSZI_API WindowCloseEvent : public Event
 	{
 	public:
 		WindowCloseEvent() = default;

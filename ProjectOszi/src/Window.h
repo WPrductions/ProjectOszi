@@ -2,6 +2,7 @@
 
 #include <ozpch.h>
 #include "Oszi/Core.h"
+#include "Oszi/Events/Event.h"
 
 
 namespace Oszi {
@@ -21,6 +22,8 @@ namespace Oszi {
 	class OSZI_API Window
 	{
 	public:
+		using EventCallbackFn = std::function<void(Event&)>;
+
 		virtual ~Window() = default;
 
 		virtual void OnUpdate() = 0;
@@ -29,6 +32,7 @@ namespace Oszi {
 		virtual unsigned int GetHight() const = 0;
 
 		//Window attributes
+		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 
