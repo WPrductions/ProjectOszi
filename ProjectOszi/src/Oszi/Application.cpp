@@ -1,6 +1,7 @@
 #include <ozpch.h>
 #include "Application.h"
 
+#include "Oszi/Input.h"
 #include "glad/glad.h"
 
 namespace Oszi {
@@ -58,6 +59,9 @@ namespace Oszi {
 		{
 
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			auto [x, y] = Input::GetMousePosition();
+			OZ_TRACE("x: {0} y: {1}", x, y);
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
