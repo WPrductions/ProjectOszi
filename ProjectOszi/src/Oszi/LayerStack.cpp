@@ -34,7 +34,7 @@ namespace Oszi
 		}
 	}
 
-	void LayerStack::PushOverlay(Layer* overlay)
+	void LayerStack::PopOverlay(Layer* overlay)
 	{
 		auto it = std::find(m_Layers.begin(), m_Layers.end(), overlay);
 		if (it != m_Layers.end())

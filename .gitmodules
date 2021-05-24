@@ -1,0 +1,9 @@
+[submodule "ProjectOszi/vendor/spdlog"]
+	path = ProjectOszi/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "ProjectOszi/vendor/GLFW"]
+	path = ProjectOszi/vendor/GLFW
+	url = https://github.com/WPrductions/glfw.git
+[submodule "ProjectOszi/vendor/imgui"]
+	path = ProjectOszi/vendor/imgui
+	url = https://github.com/WPrductions/imgui.git

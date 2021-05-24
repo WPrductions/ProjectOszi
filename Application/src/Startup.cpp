@@ -4,7 +4,7 @@ class Startup : public Oszi::Application
 {
 public:
 	Startup() {
-
+		PushLayer(new Oszi::ImGuiLayer());
 	}
 	~Startup() {
 

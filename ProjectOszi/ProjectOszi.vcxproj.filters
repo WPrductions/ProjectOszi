@@ -51,12 +51,12 @@
     </ClInclude>
     <ClInclude Include="src\Window.h" />
     <ClInclude Include="src\ozpch.h" />
-    <ClInclude Include="Layer.h">
-      <Filter>Oszi</Filter>
+    <ClInclude Include="src\Oszi\ImGui\ImGuiLayer.h">
+      <Filter>Oszi\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="LayerStack.h">
-      <Filter>Oszi</Filter>
-    </ClInclude>
+    <ClInclude Include="src\Oszi\Layer.h" />
+    <ClInclude Include="src\Oszi\LayerStack.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Oszi\Application.cpp">
@@ -69,11 +69,11 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\ozpch.cpp" />
-    <ClCompile Include="Layer.cpp">
-      <Filter>Oszi</Filter>
+    <ClCompile Include="src\Oszi\ImGui\ImGuiLayer.cpp">
+      <Filter>Oszi\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="LayerStack.cpp">
-      <Filter>Oszi</Filter>
-    </ClCompile>
+    <ClCompile Include="src\Oszi\Layer.cpp" />
+    <ClCompile Include="src\Oszi\LayerStack.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
   </ItemGroup>
 </Project>
