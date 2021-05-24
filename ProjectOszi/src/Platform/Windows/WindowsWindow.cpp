@@ -2,6 +2,8 @@
 #include "WindowsWindow.h"
 
 #include "Oszi/Events/Events.h"
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 
 namespace Oszi {
 	static bool s_GLFWinitialized = false;
@@ -44,6 +46,8 @@ namespace Oszi {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Hight, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		OZ_ASSERT(status, "Glad could not be initialised!");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

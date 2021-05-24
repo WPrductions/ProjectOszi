@@ -4,11 +4,17 @@
     <Filter Include="Oszi">
       <UniqueIdentifier>{CA5A8A7C-B691-8B0D-5F7E-71104B94070F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Oszi\Events">
+      <UniqueIdentifier>{6EBF8819-DA74-010F-6369-FBE5CF1DF812}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Oszi\ImGui">
+      <UniqueIdentifier>{6f3e13a0-6dca-44e4-b8da-dba4a860906d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -18,6 +24,21 @@
     </ClInclude>
     <ClInclude Include="src\Oszi\Core.h">
       <Filter>Oszi</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Oszi\Events\ApplicationEvent.h">
+      <Filter>Oszi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Oszi\Events\Event.h">
+      <Filter>Oszi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Oszi\Events\Events.h">
+      <Filter>Oszi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Oszi\Events\KeyEvent.h">
+      <Filter>Oszi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Oszi\Events\MouseEvent.h">
+      <Filter>Oszi\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Oszi\Log.h">
       <Filter>Oszi</Filter>
@@ -30,11 +51,12 @@
     </ClInclude>
     <ClInclude Include="src\Window.h" />
     <ClInclude Include="src\ozpch.h" />
-    <ClInclude Include="src\Oszi\Events\Event.h" />
-    <ClInclude Include="src\Oszi\Events\MouseEvent.h" />
-    <ClInclude Include="src\Oszi\Events\ApplicationEvent.h" />
-    <ClInclude Include="src\Oszi\Events\KeyEvent.h" />
-    <ClInclude Include="src\Oszi\Events\Events.h" />
+    <ClInclude Include="Layer.h">
+      <Filter>Oszi</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerStack.h">
+      <Filter>Oszi</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Oszi\Application.cpp">
@@ -47,5 +69,11 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\ozpch.cpp" />
+    <ClCompile Include="Layer.cpp">
+      <Filter>Oszi</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerStack.cpp">
+      <Filter>Oszi</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

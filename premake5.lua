@@ -12,8 +12,13 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "ProjectOszi/vendor/GLFW/include"
+IncludeDir["Glad"] = "ProjectOszi/vendor/Glad/include"
+IncludeDir["ImGui"] = "ProjectOszi/vendor/imgui"
+
 
 include "ProjectOszi/vendor/GLFW"
+include "ProjectOszi/vendor/Glad"
+include "ProjectOszi/vendor/imgui"
 
 project "ProjectOszi"
 	location "ProjectOszi"
@@ -36,12 +41,16 @@ project "ProjectOszi"
 	{
 		"%{prj.name}/vendor/spdlog/include",
 		"%{prj.name}/src",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -53,7 +62,8 @@ project "ProjectOszi"
 		defines
 		{
 			"OZ_PLATFORM_WINDOWS",
-			"OZ_BUILD_DLL"
+			"OZ_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -64,6 +74,7 @@ project "ProjectOszi"
 	filter "configurations:Debug"
 		defines "OZ_DEBUG"
 		symbols "On"
+		buildoptions "/MDd"
 
 	filter "configurations:Release"
 		defines "OZ_RELEASE"
