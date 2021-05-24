@@ -1,6 +1,8 @@
 #include <ozpch.h>
 #include "Application.h"
 
+#include "glad/glad.h"
+
 namespace Oszi {
 
 #define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
@@ -54,6 +56,9 @@ namespace Oszi {
 	void Application::Run() {
 		while (m_Running)
 		{
+
+			glClear(GL_COLOR_BUFFER_BIT);
+
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
 

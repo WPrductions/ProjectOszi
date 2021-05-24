@@ -11,7 +11,7 @@ namespace Oszi
 		//Window Events
 		WindowClose, WindowResize, WindowFocus, WindowMoved,
 		//Key Events
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		//Mouse Events
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};

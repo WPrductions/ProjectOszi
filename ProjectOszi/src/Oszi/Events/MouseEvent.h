@@ -31,8 +31,8 @@ namespace Oszi {
 	public:
 		MouseScrolledEvent(const float xOffset, const float yOffset) : m_XOffset{ xOffset }, m_YOffset{ yOffset } {}
 
-		float GetX() const { return m_XOffset; }
-		float GetY() const { return m_YOffset; }
+		float GetXOffset() const { return m_XOffset; }
+		float GetYOffset() const { return m_YOffset; }
 
 		std::string ToString() const override
 		{

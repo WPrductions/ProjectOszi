@@ -62,14 +62,6 @@ namespace Oszi {
 				data.EventCallback(event);
 			});
 
-		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
-			{
-				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-
-				WindowCloseEvent event;
-				data.EventCallback(event);
-			});
-
 		glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
@@ -96,6 +88,14 @@ namespace Oszi {
 						break;
 					}
 				}
+			});
+
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keyCode)
+			{
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+				KeyTypedEvent event(keyCode);
+				data.EventCallback(event);
 			});
 
 		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
@@ -140,7 +140,7 @@ namespace Oszi {
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-				MouseScrolledEvent event((float)xPos, (float)yPos);
+				MouseMovedEvent event((float)xPos, (float)yPos);
 				data.EventCallback(event);
 			});
 	}
